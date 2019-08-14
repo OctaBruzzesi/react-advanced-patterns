@@ -8,6 +8,7 @@ import './App.css';
 import reducer from './redux/reducer';
 import ToggleRenderProps from './components/ToggleRenderProps';
 import Menu from './components/Menu';
+import Box from './components/Box';
 
 const store = createStore(reducer);
 
@@ -19,15 +20,22 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <main>
-          <div style={{ padding: '15px' }}>
+          <Box>
             <Switch />
-          </div>
-          <div style={{ padding: '15px' }}>
+          </Box>
+          <Box>
             <Accordion
               title="Do something!"
-              content="Here I am"
+            >
+              <p style={{ color: 'white' }}>Here I am!</p>
+            </Accordion>
+          </Box>
+          <Box>
+            <Switch
+              toggleOn
+              onToggle={() => alert('Toggled')}
             />
-          </div>
+          </Box>
         </main>
         <ToggleRenderProps>
           {(toggleOn, toggle) => (

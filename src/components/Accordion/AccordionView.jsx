@@ -2,7 +2,7 @@ import React from 'react';
 import './Accordion.css';
 import Button from '../Button';
 
-const Collapsible = ({ open, onClick, title, content }) => {
+const Accordion = ({ open, onClick, title, children }) => {
   return (
     <div className="collapsible">
       <div className="accordion__banner">
@@ -14,7 +14,7 @@ const Collapsible = ({ open, onClick, title, content }) => {
       {
         open &&
         <div className="accordion__content">
-          {content}
+          {children}
         </div>
       }
       
@@ -22,4 +22,4 @@ const Collapsible = ({ open, onClick, title, content }) => {
   )
 }
 
-export default Collapsible;
+export default Accordion;
