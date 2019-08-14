@@ -1,15 +1,22 @@
 import React from 'react';
+import Switch from "react-switch";
 import './Toggle.css';
 
-const Toggle = ({ toggleOn, onClick }) => {
+const Toggle = ({ toggleOn, onToggle }) => {
   return (
     <div className="toggle">
-      {
-        toggleOn
-        ? 'On'
-        : 'Off'
-      }
-      <button onClick={onClick}>Toggle</button>
+      <label for="switch">
+        {
+          toggleOn
+          ? 'On'
+          : 'Off'
+        }
+      </label>
+      <Switch
+        id="switch"
+        onChange={onToggle}
+        checked={toggleOn}
+      />
     </div>
   )
 }

@@ -4,12 +4,12 @@ import Toggle from './ToggleView';
 const ToggleContainer = () => {
   const [toggleOn, toggleSwitch] = useState(false);
 
-  const handleButtonClick = () => {
+  const handleToggle = () => {
     toggleSwitch(!toggleOn);
   }
 
   return (
-    <Toggle toggleOn={toggleOn} onClick={handleButtonClick} />
+    <Toggle toggleOn={toggleOn} onToggle={handleToggle} />
   )
 }
 
