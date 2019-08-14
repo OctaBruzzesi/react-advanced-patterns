@@ -9,13 +9,15 @@ import reducer from './redux/reducer';
 import ToggleRenderProps from './components/ToggleRenderProps';
 import Menu from './components/Menu';
 import Box from './components/Box';
+import Layout from './components/Layout/Layout';
+import ThemeSwitch from './components/ThemeSwitch/ThemeSwitch';
 
 const store = createStore(reducer);
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <Layout className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
@@ -27,7 +29,7 @@ function App() {
             <Accordion
               title="Do something!"
             >
-              <p style={{ color: 'white' }}>Here I am!</p>
+              <p>Here I am!</p>
             </Accordion>
           </Box>
           <Box>
@@ -36,13 +38,16 @@ function App() {
               onToggle={() => alert('Toggled')}
             />
           </Box>
+          <Box>
+            <ThemeSwitch onText="Dark Mode" offText="Light Mode" />
+          </Box>
         </main>
         <ToggleRenderProps>
           {(toggleOn, toggle) => (
             <Menu open={toggleOn} onToogleOpen={toggle} links={links} />
           )}
         </ToggleRenderProps>
-      </div>
+      </Layout>
     </Provider>
   );
 }
