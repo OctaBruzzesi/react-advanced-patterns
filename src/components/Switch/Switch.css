@@ -1,0 +1,13 @@
+.toggle {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.toggle label {
+  padding: 15px;
+  color: #61dafb;
+  font-weight: bold;
+}
