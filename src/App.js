@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import Toggle from './components/Toggle/Toggle';
 import logo from './logo.svg';
 import './App.css';
 import reducer from './redux/reducer';
@@ -15,7 +16,7 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <main>
-          <p>Demo</p>
+          <Toggle />
         </main>
       </div>
     </Provider>
