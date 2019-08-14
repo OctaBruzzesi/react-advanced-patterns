@@ -2,14 +2,14 @@ import React from 'react';
 import ReactSwitch from "react-switch";
 import './Switch.css';
 
-const Switch = ({ toggleOn, onToggle }) => {
+const Switch = ({ toggleOn, onToggle, onText = 'On', offText = 'Off' }) => {
   return (
     <div className="toggle">
       <label htmlFor="switch">
         {
           toggleOn
-          ? 'On'
-          : 'Off'
+          ? onText
+          : offText
         }
       </label>
       <ReactSwitch
