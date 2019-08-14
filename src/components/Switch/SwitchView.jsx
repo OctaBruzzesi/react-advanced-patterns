@@ -13,7 +13,7 @@ const Switch = ({ toggleOn, onToggle }) => {
         }
       </label>
       <ReactSwitch
-        id="switch"
+        name="switch"
         onChange={onToggle}
         checked={toggleOn}
       />
