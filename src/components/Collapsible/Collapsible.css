@@ -1,0 +1,10 @@
+.collapsible__banner {
+  border-radius: 5px;
+  background-color: #61dafb;
+  border-color: #61dafb;
+  border-style: solid;
+}
+
+.collapsible__content {
+  color: white;
+}
