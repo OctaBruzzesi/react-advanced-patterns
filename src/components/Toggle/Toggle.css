@@ -1,0 +1,6 @@
+.toggle {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
