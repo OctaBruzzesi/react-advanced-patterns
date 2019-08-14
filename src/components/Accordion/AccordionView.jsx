@@ -1,15 +1,19 @@
 import React from 'react';
-import './Collapsible.css';
+import './Accordion.css';
+import Button from '../Button';
 
 const Collapsible = ({ open, onClick, title, content }) => {
   return (
     <div className="collapsible">
-      <button className="collapsible__banner" onClick={onClick}>
-        {title}
-      </button>
+      <div className="accordion__banner">
+        <Button
+          label={title}
+          onClick={onClick}
+        />
+      </div>
       {
         open &&
-        <div className="collapsible__content">
+        <div className="accordion__content">
           {content}
         </div>
       }
