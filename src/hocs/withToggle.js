@@ -1,16 +1,30 @@
 import React, { useState } from 'react';
 
-const withToggle = (Component) => () => {
+const defaultPropsMap = {
+  toggleOn: 'toggleOn',
+  onToggle: 'onToggle'
+}
+
+const withToggle = (Component, propsMap = {}) => (props) => {
   const [toggleOn, toggleSwitch] = useState(false);
+  const finalPropsMap = {
+    ...defaultPropsMap,
+    ...propsMap
+  };
 
   const handleToggle = () => {
     toggleSwitch(!toggleOn);
   }
 
+  const viewProps = {
+    [finalPropsMap['toggleOn']]: toggleOn,
+    [finalPropsMap['onToggle']]: handleToggle
+  }
+
   return (
     <Component
-      toggleOn={toggleOn}
-      onToggle={handleToggle}
+      {...viewProps}
+      {...props}
     />
   )
 }
