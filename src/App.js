@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import Toggle from './components/Toggle/Toggle';
+import Toggle from './components/Toggle';
 import logo from './logo.svg';
 import './App.css';
 import reducer from './redux/reducer';
