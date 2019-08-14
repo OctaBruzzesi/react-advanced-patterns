@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useToggle from '../hooks/useToggle';
 
 const defaultPropsMap = {
   toggleOn: 'toggleOn',
@@ -6,15 +7,12 @@ const defaultPropsMap = {
 }
 
 const withToggle = (Component, propsMap = {}) => (props) => {
-  const [toggleOn, toggleSwitch] = useState(false);
+  const [toggleOn, handleToggle] = useToggle(false);
+
   const finalPropsMap = {
     ...defaultPropsMap,
     ...propsMap
   };
-
-  const handleToggle = () => {
-    toggleSwitch(!toggleOn);
-  }
 
   const viewProps = {
     [finalPropsMap['toggleOn']]: toggleOn,
