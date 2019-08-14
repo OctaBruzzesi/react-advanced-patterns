@@ -1,7 +1,7 @@
-import Collapsible from './CollapsibleView';
+import Accordion from './AccordionView';
 import withToggle from '../../hocs/withToggle';
 
-export default withToggle(Collapsible, {
+export default withToggle(Accordion, {
   toggleOn: 'open',
   onToggle: 'onClick'
 });

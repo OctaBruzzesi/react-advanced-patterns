@@ -1,5 +1,5 @@
 import React from 'react';
-import useToggle from '../hooks/useToggle';
+import ToggleRenderProps from '../components/ToggleRenderProps';
 
 const defaultPropsMap = {
   toggleOn: 'toggleOn',
@@ -7,23 +7,27 @@ const defaultPropsMap = {
 }
 
 const withToggle = (Component, propsMap = {}) => (props) => {
-  const [toggleOn, handleToggle] = useToggle(false);
 
   const finalPropsMap = {
     ...defaultPropsMap,
     ...propsMap
   };
 
-  const viewProps = {
-    [finalPropsMap['toggleOn']]: toggleOn,
-    [finalPropsMap['onToggle']]: handleToggle
-  }
-
   return (
-    <Component
-      {...viewProps}
-      {...props}
-    />
+    <ToggleRenderProps>
+      {(toggleOn, toggle) => {
+        const viewProps = {
+          [finalPropsMap['toggleOn']]: toggleOn,
+          [finalPropsMap['onToggle']]: toggle
+        }
+        return (
+          <Component
+            {...viewProps}
+            {...props}
+          />
+        );
+      }}
+    </ToggleRenderProps>
   )
 }
 

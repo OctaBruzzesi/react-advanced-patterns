@@ -1,18 +1,18 @@
 import React from 'react';
-import Switch from "react-switch";
-import './Toggle.css';
+import ReactSwitch from "react-switch";
+import './Switch.css';
 
-const Toggle = ({ toggleOn, onToggle }) => {
+const Switch = ({ toggleOn, onToggle }) => {
   return (
     <div className="toggle">
-      <label for="switch">
+      <label htmlFor="switch">
         {
           toggleOn
           ? 'On'
           : 'Off'
         }
       </label>
-      <Switch
+      <ReactSwitch
         id="switch"
         onChange={onToggle}
         checked={toggleOn}
@@ -21,4 +21,4 @@ const Toggle = ({ toggleOn, onToggle }) => {
   )
 }
 
-export default Toggle;
+export default Switch;
