@@ -1,22 +1,18 @@
 import React from 'react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import Switch from './components/Switch';
 import Accordion from './components/Accordion';
 import logo from './logo.svg';
 import './App.css';
-import reducer from './redux/reducer';
 import ToggleRenderProps from './components/ToggleRenderProps';
 import Menu from './components/Menu';
 import Box from './components/Box';
 import Layout from './components/Layout/Layout';
 import ThemeSwitch from './components/ThemeSwitch/ThemeSwitch';
-
-const store = createStore(reducer);
+import ThemeProvider from './context/ThemeProvider';
 
 function App() {
   return (
-    <Provider store={store}>
+    <ThemeProvider>
       <Layout className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -48,7 +44,7 @@ function App() {
           )}
         </ToggleRenderProps>
       </Layout>
-    </Provider>
+    </ThemeProvider>
   );
 }
 
